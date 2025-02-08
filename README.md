@@ -34,14 +34,6 @@ npm start
 pnpm start
 ```
 
-### Initialiser la base de données
-
-Pour initialiser la base de données avec les `dishes` de `Japan Dishes`, exécutez la commande suivante :
-
-```bash
-node tasks/initDb.js
-```
-
 ### Profiter de l'expérience
 
 Si [My-article](https://github.com/DorianGentine/my-articles) est démarré en parallèle, vous pouvez maintenant profiter pleinement de l'expérience 🚀
