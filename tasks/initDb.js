@@ -24,7 +24,7 @@ async function initializeDatabase() {
 
     // Ajouter les nouveaux articles
     await Article.insertMany(dishes)
-    console.log(`${dishes.length} articles ont été ajoutés à la base de données`)
+    console.log(`🍣 ${dishes.length} articles ont été ajoutés à la base de données`)
 
     // Fermer la connexion à la base de données
     mongoose.connection.close()
