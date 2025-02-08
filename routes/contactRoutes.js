@@ -26,7 +26,6 @@ router.post("/contact/send", async (req, res) => {
   } catch (error) {
     res.status(500).json({ success: false, error: "Email non envoyé" })
   }
-  res.status(200).json({ success: true })
 })
 
 module.exports = router
