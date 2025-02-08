@@ -71,8 +71,8 @@ router.put("/articles/:id", upload.fields([{ name: 'hero' }, { name: 'profilePic
       content,
       excerpt,
       author,
-      hero,
-      profilePicture
+      hero: heroB64 || `https://placehold.co/600x400/lightgreen/white?text=${title}`,
+      profilePicture: profilePictureB64 || `https://placehold.co/150x150/lightgreen/white?text=${author.substring(0, 1)}`
     }, { new: true })
 
     res.json(updatedArticle)
