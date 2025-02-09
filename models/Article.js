@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const { getFormattedDate } = require("../utils/article")
 
 const ArticleSchema = new mongoose.Schema({
   hero: { type: String },
@@ -7,17 +8,10 @@ const ArticleSchema = new mongoose.Schema({
   excerpt: { type: String, required: true },
   author: { type: String },
   profilePicture: { type: String },
-  createdAt: { type: Date, default: Date.now },
   formattedDate: {
     type: String,
-    default: function() {
-      const date = new Date(this.createdAt);
-      const day = String(date.getDate()).padStart(2, '0');
-      const month = String(date.getMonth() + 1).padStart(2, '0');
-      const year = date.getFullYear();
-      return `${day}/${month}/${year}`;
-    }
+    default: getFormattedDate(new Date())
   }
-})
+}, { timestamps: true })
 
 module.exports = mongoose.model("Article", ArticleSchema)

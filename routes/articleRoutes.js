@@ -49,7 +49,7 @@ router.post("/articles", upload.fields([{ name: 'hero' }, { name: 'profilePictur
       content,
       excerpt,
       author,
-      hero: heroB64 || `https://placehold.co/600x400/lightgreen/white?text=${title}`,
+      hero: heroB64 || `https://placehold.co/600x400/lightgreen/white?text=${title.trim()}`,
       profilePicture: profilePictureB64 || `https://placehold.co/150x150/lightgreen/white?text=${author.substring(0, 1)}`
     })
 
@@ -71,8 +71,8 @@ router.put("/articles/:id", upload.fields([{ name: 'hero' }, { name: 'profilePic
       content,
       excerpt,
       author,
-      hero: heroB64 || `https://placehold.co/600x400/lightgreen/white?text=${title}`,
-      profilePicture: profilePictureB64 || `https://placehold.co/150x150/lightgreen/white?text=${author.substring(0, 1)}`
+      hero: heroB64,
+      profilePicture: profilePictureB64
     }, { new: true })
 
     res.json(updatedArticle)
